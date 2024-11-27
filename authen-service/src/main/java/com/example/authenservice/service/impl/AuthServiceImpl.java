@@ -42,6 +42,10 @@ public class AuthServiceImpl implements AuthService {
 
         if (!authenticated) throw new AppException(ErrorCode.UNAUTHENTICATED);
 
+        RefreshToken refreshTokenold = refreshTokenRepository.findRefreshTokenByUserName(user.getUserName())
+                .orElseThrow(() -> new AppException(ErrorCode.INVALID_REFRESH_TOKEN));
+        refreshTokenRepository.delete(refreshTokenold);
+
         var tokenPair = jwt.generateTokens(user);
 
         RefreshToken refreshToken = new RefreshToken();
