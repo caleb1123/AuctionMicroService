@@ -1,0 +1,21 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /auction
+
+spring:
+  datasource:
+    url: "jdbc:mysql://localhost:3306/auction?useSSL=false&serverTimezone=UTC"
+    driver-class-name: "com.mysql.cj.jdbc.Driver"
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: "186e4b79e23b663a99f7824f3c48066c517258bbaa8237d45fec6b31e0cca51b"
+  app:
+    jwt-access-expiration-milliseconds: 3600000
+    jwt-refresh-expiration-milliseconds: 7200000
