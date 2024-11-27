@@ -1,7 +1,9 @@
 package com.example.authenservice.controller;
 
+import com.example.authenservice.payload.request.IntrospectRequest;
 import com.example.authenservice.payload.request.LoginRequest;
 import com.example.authenservice.payload.response.ApiResponse;
+import com.example.authenservice.payload.response.RefreshTokenResponse;
 import com.example.authenservice.payload.response.TokenResponse;
 import com.example.authenservice.service.AuthService;
 import lombok.AccessLevel;
@@ -28,4 +30,19 @@ public class AuthController {
                 .build();
     }
 
+    @PostMapping("/introspect")
+    public ApiResponse<Boolean> introspect(@RequestBody IntrospectRequest token) {
+        var result = authService.introspect(token);
+        return ApiResponse.<Boolean>builder()
+                .result(result.isValid())
+                .build();
+    }
+
+    @PostMapping("/refresh")
+    public ApiResponse<RefreshTokenResponse> refreshToken(@RequestBody IntrospectRequest refreshToken) {
+        var result = authService.refreshToken(refreshToken);
+        return ApiResponse.<RefreshTokenResponse>builder()
+                .result(result)
+                .build();
+    }
 }

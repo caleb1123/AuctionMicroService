@@ -40,6 +40,10 @@ public class Jwt {
         return new TokenPair(accessToken, refreshToken);
     }
 
+    public  TokenInfo generateAccessToken(User user) {
+        return generateToken(user, accessExpirationMillis);
+    }
+
     // Function to generate both Access and Refresh tokens
     private TokenInfo generateToken(User user, long expirationMillis) {
         try {
