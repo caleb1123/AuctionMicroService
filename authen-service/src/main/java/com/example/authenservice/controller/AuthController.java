@@ -21,7 +21,7 @@ public class AuthController {
     AuthService authService;
 
     @PostMapping("/login")
-    ApiResponse<TokenResponse> login(@RequestBody LoginRequest loginRequest) {
+    public ApiResponse<TokenResponse> login(@RequestBody LoginRequest loginRequest) {
         var result = authService.login(loginRequest);
         return ApiResponse.<TokenResponse>builder()
                 .result(result)
