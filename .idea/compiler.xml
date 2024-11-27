@@ -10,6 +10,10 @@
         <module name="authen-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="profile-service.main" target="17" />
+      <module name="profile-service.test" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

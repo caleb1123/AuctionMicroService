@@ -1,7 +1,6 @@
-package com.example.authenservice.payload.response;
+package com.example.profileservice.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
