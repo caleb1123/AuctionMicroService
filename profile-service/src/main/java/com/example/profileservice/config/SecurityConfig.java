@@ -1,4 +1,4 @@
-package com.example.authenservice.config;
+package com.example.profileservice.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +19,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     private static final String[] PUBLIC_ENDPOINTS = {
-        "/user/sign-up", "/auth/login", "/auth/introspect", "/auth/logout", "/auth/refresh","/swagger-ui/**",  // Thêm endpoint Swagger UI
+        "/user/create", "/auth/login", "/auth/introspect", "/auth/logout", "/auth/refresh","/swagger-ui/**",  // Thêm endpoint Swagger UI
             "/v3/api-docs/**"   // Thêm endpoint API docs
     };
 
@@ -49,7 +49,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         String[] publicEndpoints = new String[] {
 
-                "/user/sign-up", "/auth/login", "/auth/introspect", "/profile/user/create", "/auth/refresh","/swagger-ui/**",  // Thêm endpoint Swagger UI
+                "/user/create", "/auth/login", "/auth/introspect", "/auth/logout", "/auth/refresh","/swagger-ui/**",  // Thêm endpoint Swagger UI
                 "/v3/api-docs/**",   // Thêm endpoint API docs
         "http://localhost:8080/swagger-ui/index.html#/"
         };

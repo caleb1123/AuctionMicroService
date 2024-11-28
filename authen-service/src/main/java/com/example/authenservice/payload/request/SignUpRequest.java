@@ -14,4 +14,7 @@ public class SignUpRequest {
     String password;
     String firstName;
     String lastName;
+    String address;
+    String phone;
+    String avatar;
 }
