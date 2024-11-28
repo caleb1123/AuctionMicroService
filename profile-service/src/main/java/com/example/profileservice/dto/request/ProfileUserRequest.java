@@ -14,7 +14,7 @@ import org.springframework.data.neo4j.core.schema.Property;
 @FieldDefaults(level =  lombok.AccessLevel.PRIVATE, makeFinal = false)
 public class ProfileUserRequest {
     String userId;
-    String Address;
-    String Phone;
-    String Avatar;
+    String address;
+    String phone;
+    String avatar;
 }
