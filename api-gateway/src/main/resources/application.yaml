@@ -1,0 +1,13 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: authen-service
+          uri: http://localhost:8080
+          predicates:
+            - Path=/auction/user/**
